@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100');
+body{
+    font-family: 'roboto';
+}
+p{
+    font-size: 18px;
+}
+#roof{
+    width: 99vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+h3{
+    color: saddlebrown;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.navbar {
+    font-size: 18px;
+    background-color: beige;
+    overflow: hidden;
+    text-align:center;
+}
+
+.main-nav {
+    list-style-type: none;
+    display: none;
+}
+.nav-links {
+    text-decoration: none;
+    color:#9c7f5d;
+}
+.main-nav li {
+    text-align: center;
+    margin: 15px auto;
+}
+
+.navbar-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    color:#9c7f5d;
+    font-size: 24px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0;
+        height: 70px;
+        align-items: center;
+    }
+    .main-nav {
+        display: flex;
+        margin-right: 30px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .main-nav li {
+        margin: 0;
+    }
+    .nav-links {
+        margin-left: 40px;
+    }
+    .navbar-toggle {
+        display: none;
+    }
+    .nav-links:hover {
+        color: beige;
+        background-color: #9c7f5d;
+    }
+    .grid-container{
+        background-color: beige;
+        display: grid;
+        grid-template-columns: 30px auto auto 30px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        ". brief weather ."
+        ". location location ."
+        ". city starbucks ."
+        ". sichuan sichuan ."
+        ". animal pandaimages ."
+        ". vi np .";
+    }
+    .brief{
+        padding: 4rem;
+        margin-left: 4rem;
+        grid-area: brief;
+        text-align: left;
+    }
+    .location{
+        grid-area: location;
+        padding: 10px;
+        margin: auto;
+    }
+    .weather{
+        grid-area: weather;
+        margin-left: auto;
+        padding-right: 2rem;
+    }
+    #city{
+        grid-area: city;
+        padding: 10px;
+        margin-left: 4rem;
+    }
+    #starbucks{
+        grid-area: starbucks;
+        width: 300px;
+        height: auto;
+        padding: 10px;
+        margin: auto;
+    }
+    #map{
+        width: 500px;
+    }
+    #animal{
+        grid-area: animal;
+        padding: 10px;
+        margin-left: 4rem;
+        padding-bottom: 10px;
+    }
+    #sichuan{
+        grid-area: sichuan;
+        padding: 10px;
+        margin: auto;
+    }
+    #pandaimages{
+        grid-area: pandaimages;
+        padding-left: 20px;
+        margin: auto;
+    }
+    #np{
+        grid-area: np;
+        padding-left: 20px;
+        padding-bottom: 10px;
+        margin: auto;
+    }
+    #vi{
+        grid-area: vi;
+        width: 50vw;
+        margin-left: 4rem;
+        padding-bottom: 2rem;
+        align-items: center;
+    }
+    #brief-two{
+        display: none;
+    }
+    .weatherbox{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: "city city city city"
+                             "time time time time"
+                             "icon icon temp temp"
+                             "describe describe humi humi"
+                             ;
+        height: 4rem;
+        width: 12rem;
+        text-align: center;
+    }
+    #weather-location{
+        grid-area: city;
+        font-size: 2rem;
+        border-bottom: solid thin black;
+    }
+    #weather-icon{
+        grid-area: icon;
+        padding-top: 10px;
+    }
+    #weather-temp{
+        grid-area: temp;
+        font-size: 2rem;
+        font: bolder;
+        padding-top: 10px;
+    }
+    #weather-describe{
+        grid-area: describe;  
+    }
+    #humi{
+        grid-area: humi; 
+    }
+    #local-time{
+        grid-area: time;
+    }
+    
+}
+
+
+/* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+} */
+
+@media screen and (max-width: 768px){
+.grid-container{
+    background-color: beige;
+    display: grid;
+    grid-template-columns: 10px auto 10px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". brief ."
+    ". location ."
+    ". weather ."
+    ". city ."
+    ". starbucks ."
+    ". sichuan ."
+    ". animal ."
+    ". pandaimages ."
+    ". np ."
+    ". vi .";
+}
+.brief{
+    padding: 10px;
+    margin: auto;
+    grid-area: brief;
+    text-align: left;
+}
+#brief-two{
+    display: none;
+}
+.location{
+    grid-area: location;
+    padding: 10px;
+    margin: auto;
+}
+.weather{
+    grid-area: weather;
+    padding-bottom: 100px;
+    margin: auto;
+}
+#city{
+    grid-area: city;
+    padding: 10px;
+    margin: auto;
+}
+#animal{
+    grid-area: animal;
+    padding: 10px;
+    margin: auto;
+}
+#np{
+    grid-area: np;
+    padding: 10px;
+    margin: auto;
+}
+#vi{
+    grid-area: vi;
+    width: auto ;
+    max-width: 100% ;
+    height: auto ;
+}
+#map{
+    width: 350px ;
+    height: auto ;
+}
+#starbucks{
+    grid-area: starbucks;
+    width: 90% ;
+    height: auto ;
+    margin: auto;
+}
+#sichuan{
+    grid-area: sichuan;
+    width: 90% ;
+    height: auto ;
+    margin: auto;
+}
+#pandaimages{
+    grid-area: pandaimages;
+    width: 90% ;
+    height: auto ;
+    margin: auto;
+}
+/*Local Weather Con*/
+.weatherbox{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "city city city city"
+                         "time time time time"
+                         "icon icon temp temp"
+                         "describe describe humi humi"
+                         ;
+    height: 4rem;
+    width: 12rem;
+    text-align: center;
+}
+#weather-location{
+    grid-area: city;
+    font-size: 2rem;
+	border-bottom: solid thin black;
+}
+#weather-icon{
+    grid-area: icon;
+    padding-top: 10px;
+}
+#weather-temp{
+    grid-area: temp;
+    font-size: 2rem;
+    font: bolder;
+    padding-top: 10px;
+}
+#weather-describe{
+    grid-area: describe;  
+}
+#humi{
+    grid-area: humi; 
+}
+#local-time{
+    grid-area: time;
+}
+}
+footer{
+    color: #9c7f5d;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+
